@@ -75,7 +75,7 @@ RestaurantTest {
         List<Item> itemsSelected = new ArrayList<>();
         List<Item> restaurantMenu = restaurant.getMenu();
         itemsSelected.add(restaurantMenu.get(0));
-        assertEquals(119,restaurant.orderTotal(itemsSelected));
+        assertEquals(119,restaurant.total_value_of_selected_items(itemsSelected));
     }
 
 }

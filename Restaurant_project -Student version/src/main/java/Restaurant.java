@@ -65,8 +65,14 @@ public class Restaurant {
         return name;
     }
 
-    public int orderTotal(List<Item> itemsSelected) {
-        return -1;
+    public int total_value_of_selected_items(List<Item> selectedItems) {
+        int orderTotal = 0;
+        for (Item item : selectedItems) {
+            orderTotal = orderTotal + item.getPrice();
+
+        }
+
+        return orderTotal;
     }
 
 
