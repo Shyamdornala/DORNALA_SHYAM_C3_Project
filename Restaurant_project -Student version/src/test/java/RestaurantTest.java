@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,6 +68,14 @@ RestaurantTest {
     public void removing_item_that_does_not_exist_should_throw_exception() {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
+    }
+
+    @Test
+    public void verify_order_total_on_for_Selected_items(){
+        List<Item> itemsSelected = new ArrayList<>();
+        List<Item> restaurantMenu = restaurant.getMenu();
+        itemsSelected.add(restaurantMenu.get(0));
+        assertEquals(119,restaurant.orderTotal(itemsSelected));
     }
 
 }

@@ -65,5 +65,9 @@ public class Restaurant {
         return name;
     }
 
+    public int orderTotal(List<Item> itemsSelected) {
+        return -1;
+    }
+
 
 }
